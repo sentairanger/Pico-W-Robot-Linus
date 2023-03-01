@@ -1,0 +1,72 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+button {
+	padding: 16px 32px;
+	font-size: 17px;
+	border-radius: 12px;
+	background: #33fff6;
+
+}
+body {
+	background: #33c1ff;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<h1> Pico Robot Control </h1>
+<table align="center">
+ <tr>
+    <th></th>
+    <th><button id="forward">^</button></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><button id="left"><</button></td>
+    <td></td>
+    <td><button id="right">></button></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><button id="backward">v</button></td>
+    <td></td>
+  </tr>
+</table>
+<script type="text/javascript">
+$('#forward').on('mousedown', function(){
+  $.get('/forward?');
+  
+  });
+$('#forward').on('mouseup', function(){
+  $.get('/stop?');
+  
+  }); 
+$('#backward').on('mousedown', function(){
+  $.get('/backward?');
+  
+  });
+$('#backward').on('mouseup', function(){
+  $.get('/stop?');
+  
+  });
+$('#left').on('mousedown', function(){
+  $.get('/left?');
+  
+  });
+$('#left').on('mouseup', function(){
+  $.get('/stop?');
+  
+  });
+$('#right').on('mousedown', function(){
+  $.get('/right?');
+  
+  });
+$('#right').on('mouseup', function(){
+  $.get('/stop?');
+  
+  });   
+</script>
+</body>
+</html>

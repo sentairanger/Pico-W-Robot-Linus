@@ -1,0 +1,135 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+button {
+	padding: 16px 32px;
+	font-size: 17px;
+	border-radius: 12px;
+	background: #33fff6;
+
+}
+body {
+	background: #33c1ff;
+    text-align: center;
+}
+output {
+      font-size: 17px;
+      padding: 25px;
+   }
+</style>
+</head>
+<body>
+<h1> Pico Robot Control </h1>
+<table align="center">
+ <tr>
+    <th></th>
+    <th><button id="forward">^</button></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><button id="left"><</button></td>
+    <td><button id="eye">O</button></td>
+    <td><button id="right">></button></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><button id="backward">v</button></td>
+    <td></td>
+  </tr>
+</table>
+<h2>Pico Servo Angle Control</h2>
+<form id="form">
+<input type="range" min="0" max="100" value="slider_value" name="servo" id="servo">
+<output></output>
+</form>
+<h2>Pico Servo 2 Angle Control</h1>
+<form id="form2">
+<input type="range" min="0" max="100" value="slider_value2" name="servo2" id="servo2">
+<output id="output2"></output>
+</form>
+<h2> Pico PWM Control </h2>
+<form id="form3">
+<input type="range" min="0" max="10" value="slider_value3" name="pwm" id="pwm">
+<output id="output3"></output>
+</form>
+<script type="text/javascript">
+let i = document.getElementById('servo'),
+    o = document.querySelector('output');
+
+    o.innerHTML = i.value;
+
+    i.addEventListener('input', function () {
+         o.innerHTML = i.value;
+       }, false);
+            
+    i.addEventListener('change', function ()  {
+         document.getElementById("form").submit();
+       }, false);
+let j = document.getElementById('servo2'),
+    p = document.getElementById('output2');
+
+    p.innerHTML = j.value;
+
+    j.addEventListener('input', function () {
+         p.innerHTML = j.value;
+       }, false);
+            
+    j.addEventListener('change', function ()  {
+         document.getElementById("form2").submit();
+       }, false);
+let k = document.getElementById('pwm'),
+    q = document.getElementById('output3');
+
+    q.innerHTML = k.value;
+
+    k.addEventListener('input', function () {
+         q.innerHTML = k.value;
+       }, false);
+            
+    k.addEventListener('change', function ()  {
+         document.getElementById("form3").submit();
+       }, false);
+$('#forward').on('touchstart', function(){
+  $.get('/forward?');
+  
+  });
+$('#forward').on('touchend', function(){
+  $.get('/stop?');
+  
+  }); 
+$('#backward').on('touchstart', function(){
+  $.get('/backward?');
+  
+  });
+$('#backward').on('touchend', function(){
+  $.get('/stop?');
+  
+  });
+$('#left').on('touchstart', function(){
+  $.get('/left?');
+  
+  });
+$('#left').on('touchend', function(){
+  $.get('/stop?');
+  
+  });
+$('#right').on('touchstart', function(){
+  $.get('/right?');
+  
+  });
+$('#right').on('touchend', function(){
+  $.get('/stop?');
+  
+  });
+$('#eye').on('touchstart', function(){
+  $.get('/on?');
+  
+  });
+$('#eye').on('touchend', function(){
+  $.get('/off?');
+  
+  });  
+</script>
+</body>
+</html>

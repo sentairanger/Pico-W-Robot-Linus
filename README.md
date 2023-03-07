@@ -9,6 +9,6 @@ First make sure to download Micropython for the Pico W and make sure it is the c
 
 ![App](https://github.com/sentairanger/Pico-W-Robot-Linus/blob/main/wifi-robot-pico.png)
 
-![Final](https://github.com/sentairanger/Pico-W-Robot-Linus/blob/main/wifi-robot-pico.png)
+![Final](https://github.com/sentairanger/Pico-W-Robot-Linus/blob/main/Screenshot_20230305-154843.png)
 
 ![fritzing](https://github.com/sentairanger/Pico-W-Robot-Linus/blob/main/pico-w-robot_bb.png)

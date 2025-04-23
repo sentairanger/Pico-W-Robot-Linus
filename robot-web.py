@@ -5,8 +5,8 @@ from picozero import Robot
 
 robot = Robot(left=(14, 15), right=(16, 17))
 
-ssid = 'TC8717TDA'
-password = 'TC8717T9344DA'
+ssid = ''
+password = ''
 
 def connect():
     wlan = network.WLAN(network.STA_IF)
